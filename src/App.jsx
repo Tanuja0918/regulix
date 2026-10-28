@@ -8,7 +8,7 @@ export default function App() {
   const isAuthenticated = true; // Toggle or connect to auth state
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={isAuthenticated ? <DashboardLayout /> : <Navigate to="/login" />}>
           <Route index element={<DashboardHome />} />
